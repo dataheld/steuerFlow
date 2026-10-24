@@ -1,20 +1,16 @@
 ---
 title: "steuerFlow"
 author: "Max Held"
-lang: "de"
-format:
-  html:
-    theme: pulse
-    anchor-sections: true
-    mermaid:
-      theme: default
-    code-tools:
-      source: https://github.com/maxheld83/steuerFlow/blob/main/index.qmd
-    toc: true
-    number-sections: false
 ---
 
-{{< include README.md >}}
+Ein paar Mermaid-Flussdiagramme für Steuerzahler.
+
+::: {.callout-note}
+Keine Steuer- oder Rechtsberatung.
+Keine Haftung für den Inhalt.
+:::
+
+Verbesserungen (Pull Requests, Issues) sind herzlich Willkommen!
 
 ## Anforderungen an Rechnungen
 
