@@ -16,6 +16,11 @@ Website: <https://steuerflow.maxheld.de>.
 Die Website verwendet den Quarto-Projekttyp `nullkomma-docs` von
 [nullkomma](https://github.com/dataheld/nullkomma).
 Nix stellt Quarto und die Cloudflare-Werkzeuge bereit.
+Das gemeinsame Theme und die ergänzenden Datenschutzhinweise stammen aus den
+Flake-Outputs `lib.brand` und `lib.privacy` von
+[maxheld](https://github.com/dataheld/maxheld).
+Dieser private Flake-Input benötigt GitHub-Lesezugriff auch in CI;
+ein öffentlich abrufbarer FlakeHub-Release ist derzeit nicht verfügbar.
 
 ```sh
 nix develop --command generate-files

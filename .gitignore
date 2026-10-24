@@ -14,6 +14,7 @@ index_files/
 /_extensions/nullkomma-docs
 /_nullkomma-brand.yml
 /privacy.qmd
+/_brand
 
 /.quarto/
 **/*.quarto_ipynb

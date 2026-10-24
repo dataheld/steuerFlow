@@ -4,11 +4,15 @@
   inputs = {
     nullkomma.url = "https://flakehub.com/f/dataheld/nullkomma/0.1.*";
     nixpkgs.follows = "nullkomma/nixpkgs";
+    maxheld = {
+      url = "github:dataheld/maxheld";
+    };
   };
 
   outputs =
     inputs:
     inputs.nullkomma.lib.mkFlake { inherit inputs; } {
+      nullkomma.brand = inputs.maxheld;
       nullkomma.quarto.enable = true;
       nullkomma.cloudflare = {
         enable = true;

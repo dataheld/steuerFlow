@@ -8,10 +8,7 @@ website:
   title: steuerFlow
   site-url: https://steuerflow.maxheld.de
   repo-url: https://github.com/dataheld/steuerFlow
-  sidebar:
-    contents:
-      - href: privacy.qmd
-        text: Datenschutz
+  sidebar: false
 format:
   html:
     anchor-sections: true
