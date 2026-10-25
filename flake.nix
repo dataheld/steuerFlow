@@ -4,9 +4,7 @@
   inputs = {
     nullkomma.url = "https://flakehub.com/f/dataheld/nullkomma/0.1.*";
     nixpkgs.follows = "nullkomma/nixpkgs";
-    maxheld = {
-      url = "github:dataheld/maxheld";
-    };
+    maxheld.url = "github:dataheld/maxheld";
   };
 
   outputs =
@@ -30,10 +28,6 @@
       };
       # Keep CI and its dependent production deployment in one workflow.
       nullkomma.github.enable = false;
-      nullkomma.gitignore = [
-        "index.html"
-        "index_files/"
-      ];
       # typos only supports English, not the site's German prose and node names.
       perSystem.treefmt.settings.formatter.typos.excludes = [
         "README.md"
