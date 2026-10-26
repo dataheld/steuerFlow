@@ -8,10 +8,10 @@ result-*
 /.nvim.lua
 /.vscode/extensions.json
 /.vscode/settings.json
-/_extensions/nullkomma-brand
+/_brand
 /_extensions/nkdocs
+/_extensions/nullkomma-brand
 /_nullkomma-brand.yml
 /privacy.qmd
-/_brand
 
 **/*.quarto_ipynb
