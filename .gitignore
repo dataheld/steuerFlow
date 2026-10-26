@@ -5,6 +5,7 @@ result
 result-*
 .direnv/
 /.nullkomma/cloudflare/
+/.nullkomma/processes/
 /.nvim.lua
 /.vscode/extensions.json
 /.vscode/settings.json
@@ -15,3 +16,5 @@ result-*
 /privacy.qmd
 
 **/*.quarto_ipynb
+
+/.quarto/
