@@ -11,7 +11,8 @@
     inputs:
     inputs.nullkomma.lib.mkFlake { inherit inputs; } {
       nullkomma.brand = inputs.maxheld;
-      nullkomma.quarto-website-brand.enable = true;
+      nullkomma.quarto.enable = true;
+      nullkomma.quarto.brand.enable = true;
       nullkomma.cloudflare = {
         enable = true;
         domain = "maxheld.de";
