@@ -1,0 +1,11 @@
+project:
+  type: nullkomma-docs
+  render:
+    - index.qmd
+    - privacy.qmd
+lang: de
+website:
+  title: steuerFlow
+  site-url: https://steuerflow.maxheld.de
+  repo-url: https://github.com/dataheld/steuerFlow
+  sidebar: false

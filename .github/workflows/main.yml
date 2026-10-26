@@ -1,41 +1,40 @@
-name: Render & Publish Quarto Website
-
-on: push
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+name: CI
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.ref != 'refs/heads/main' }}
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      - name: Render Quarto
-        run: |
-          quarto render index.qmd
-      - name: Copy index.html
-        run: |
-          mkdir _site
-          mv index.html index_files _site/
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+  check:
+    uses: dataheld/nullkomma/.github/workflows/ci.yml@main
     permissions:
-      pages: write
+      contents: read
       id-token: write
+  deploy:
+    needs: check
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && !github.event.repository.fork }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    concurrency:
+      group: cloudflare-production
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: https://steuerflow.maxheld.de
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_STATE_BUCKET: ${{ vars.CLOUDFLARE_STATE_BUCKET }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+      CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: DeterminateSystems/determinate-nix-action@v3
+      - name: Deploy to Cloudflare
+        run: nix run .#deploy

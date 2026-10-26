@@ -1,10 +1,3 @@
-# steuerFlow
-
-Ein paar Mermaid-Flussdiagramme für Steuerzahler.
-
-::: {.callout-note}
-Keine Steuer- oder Rechtsberatung.
-Keine Haftung für den Inhalt.
-:::
-
-Verbesserungen (Pull Requests, Issues) sind herzlich Willkommen!
+Website: <https://steuerflow.maxheld.de>.
+Dokumentation: [nullkomma](https://github.com/dataheld/nullkomma#readme).
+Aufgaben/Outputs: `nix develop --command tasks` und `nix flake show`.
