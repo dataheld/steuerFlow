@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+// Quarto's Mermaid defaults (lightened body color, plain $primary) are
+// compiled once and unreadable in dark mode; use Bootstrap's color-mode-aware
+// CSS variables instead, so diagrams follow the surrounding page.
+$mermaid-edge-color: var(--bs-secondary-color);
+$mermaid-label-fg-color: var(--bs-primary-text-emphasis);
+$mermaid-node-bg-color: var(--bs-primary-bg-subtle);
+$mermaid-fg-color--lightest: var(--bs-tertiary-bg);
+$mermaid-fg-color--lighter: var(--bs-border-color);
+
+/*-- scss:rules --*/
+// Quarto's embedded Mermaid CSS predates these Mermaid 11 edge label
+// elements, so Mermaid's fixed light gray would show through in dark mode.
+.labelBkg,
+.edgeLabel p {
+  background-color: var(--mermaid-label-bg-color) !important;
+}

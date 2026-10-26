@@ -9,3 +9,8 @@ website:
   site-url: https://steuerflow.maxheld.de
   repo-url: https://github.com/dataheld/steuerFlow
   sidebar: false
+format:
+  html:
+    theme:
+      light: [mermaid.scss]
+      dark: [mermaid.scss]
