@@ -11,7 +11,7 @@ flowchart TB
   AG --> Selbst
   Selbst{"Selbständig Nutzbar?"}
   Selbst -- Nein --> Zugang
-  Zugang["Nachträgliche AHK \n zu bestehendem Wirtschaftsgut"]
+  Zugang["Nachträgliche AHK<br>zu bestehendem Wirtschaftsgut"]
   Selbst -- Ja --> Bewegl
   Bewegl{"Beweglich?"}
   Bewegl -- Ja --> Abnutz
@@ -19,7 +19,7 @@ flowchart TB
   Abnutz -- Ja --> AHK
   Zugang -- Zugang --> AHK & Imma & Immo & GS
   subgraph Aktivierung
-    VorR("Vorräte \n (Umlaufvermögen)")
+    VorR("Vorräte<br>(Umlaufvermögen)")
     Immo["Immobilie"]
     GS["Grundstück"]
     Imma["Immateriell"]
@@ -28,19 +28,19 @@ flowchart TB
   Abnutz -- Nein --> Imma
   Abnutz{"Abnutzbar?"}
   Imma --> AfA
-  kAb(("Keine \n Absetzbarkeit"))
+  kAb(("Keine<br>Absetzbarkeit"))
   GS --> kAb
-  AHK{"Netto Anschaffungs- und \n Herstellungskosten (AHK)"}
+  AHK{"Netto Anschaffungs- und<br>Herstellungskosten (AHK)"}
   AHK -- "bis 250€" --> Exp
   GWG("Geringwertiges Wirtschaftsgut")
   AHK -- "bis 1000€" --> GWG
   GWG -- "bis 1000€" --> Sammelposten
-  Sammelposten[("Sammelposten \n (Gilt bei Verwendung \n für GWG pro Jahr!)")]
-  Pool(("Poolabschreibung \n (5 Jahre linear)"))
+  Sammelposten[("Sammelposten<br>(Gilt bei Verwendung<br>für GWG pro Jahr!)")]
+  Pool(("Poolabschreibung<br>(5 Jahre linear)"))
   Sammelposten --> Pool
-  GWG-V[("GWG-Verzeichnis \n (Zeit und Höhe \n der Anschaffungen)")]
+  GWG-V[("GWG-Verzeichnis<br>(Zeit und Höhe<br>der Anschaffungen)")]
   GWG -- "bis 800€" --> GWG-V
-  AfA(("Absetzung für Abnutzung \n (Nach überlicher \n Nutzungsdauer)"))
+  AfA(("Absetzung für Abnutzung<br>(Nach überlicher<br>Nutzungsdauer)"))
   GWG --> AfA
   Immo --> AfA
   GWG-V --> Exp

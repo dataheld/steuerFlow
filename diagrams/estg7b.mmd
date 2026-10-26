@@ -1,34 +1,34 @@
 flowchart LR;
   subgraph Bedingungen
     direction TB
-    istNeuWR{"Neue Wohnung entstanden? \n Neu-, Aus- & Anbau \n (§ 181 Abs. 9 BewG, >=23m2)"}
+    istNeuWR{"Neue Wohnung entstanden?<br>Neu-, Aus- & Anbau<br>(§ 181 Abs. 9 BewG, >=23m2)"}
     istNeuWR -- Nein --> keineSA["🚫 Nicht begünstigt"]
     istNeuWR -- Ja --> istInFrist
-    istInFrist{"\n Bauanzeige, Bauantrantrag \n oder Beginn Ausführung wenn genehmigungsfrei \n von 31.12.2018 bis 01.01.2022 \n von 01.01.2023 bis 31.12.2026"}
+    istInFrist{"Bauanzeige, Bauantrantrag<br>oder Beginn Ausführung wenn genehmigungsfrei<br>von 31.12.2018 bis 01.01.2022<br>von 01.01.2023 bis 31.12.2026"}
     istInFrist -- Nein --> keineSA
     istInFrist -- Ja --> istKFW40
-    istKFW40{"Gebäude ist <= Effizienzhaus 40 \n Qualitätssiegel Nachhaltiges Gebaeude \n (Bedingung nur ab 2023)"}
+    istKFW40{"Gebäude ist <= Effizienzhaus 40<br>Qualitätssiegel Nachhaltiges Gebaeude<br>(Bedingung nur ab 2023)"}
     istKFW40 -- Nein --> keineSA
     istKFW40 -- Ja --> AHK3k
   end
   subgraph EStG7b ["§ 7b EStG"];
     direction TB
-    AHK3k{"< 4800€/m2 \n < 3000€/m2 (alte Regelung bis 31.12.2021)"}
+    AHK3k{"< 4800€/m2<br>< 3000€/m2 (alte Regelung bis 31.12.2021)"}
     AHK3k -- Nein --> keineSA
     AHK3k -- Ja --> Fertig
     Fertig(("Fertigstellung"))
     Fertig --> 7bSonder
-    7bSonder["✅ Sonderabschreibung \n bis zu 4x5% p.a."]
+    7bSonder["✅ Sonderabschreibung<br>bis zu 4x5% p.a."]
     7bSonder --> 10JVerm
-    10JVerm(("10 Jahre \n Vermietung"))
+    10JVerm(("10 Jahre<br>Vermietung"))
     10JVerm -- Nein --> RueckZ
     RueckZ["Ggfs. Steuernachforderung"]
   end
-  AHK("Anschaffungs- und Herstellungskosten \n (AHK)")
+  AHK("Anschaffungs- und Herstellungskosten<br>(AHK)")
   AHK --> istAHKNeueWohn
   istAHKNeueWohn{"Anteil für neue Wohnungen"}
   istAHKNeueWohn -- Alle --> AHK3k
   istAHKNeueWohn -- Alle --> AfA
   istAHKNeueWohn -- Anteil --> AHK2k
-  AHK2k[/"max 2500€/m2 \n von max 2000€/m2 (alte Regelung bis 31.12.2018)"\]
+  AHK2k[/"max 2500€/m2<br>von max 2000€/m2 (alte Regelung bis 31.12.2018)"\]
   AHK2k --> 7bSonder
