@@ -109,17 +109,16 @@
         "nullkomma": "nullkomma"
       },
       "locked": {
-        "lastModified": 1792859398,
-        "narHash": "sha256-olPhcx07o9sY3NklWMbaWNu/TO6LMuh6NLwyMQBcuf8=",
-        "owner": "dataheld",
-        "repo": "maxheld",
-        "rev": "09c8d51ff3dce61cbc9e9dd58a78a5879d596ba0",
-        "type": "github"
+        "lastModified": 1793000437,
+        "narHash": "sha256-aiFOBs0LOBSNr1vt+7a0XoK8oHtG7DmKFpO110PRqL0=",
+        "rev": "f21d5c4db83fbf48bfc2e9c445857065022a6bb1",
+        "revCount": 188,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/dataheld/maxheld/0.1.188%2Brev-f21d5c4db83fbf48bfc2e9c445857065022a6bb1/01a1772e-57e1-7bc3-aabd-06e2d6ba8e05/source.tar.gz"
       },
       "original": {
-        "owner": "dataheld",
-        "repo": "maxheld",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://flakehub.com/f/dataheld/maxheld/%2A"
       }
     },
     "nixpkgs": {
