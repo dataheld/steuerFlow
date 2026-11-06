@@ -1,3 +1,8 @@
+**/*.quarto_ipynb
+
+/.quarto/
+
+# nullkomma:git:start
 .quarto/
 _site/
 .luarc.json
@@ -5,16 +10,13 @@ result
 result-*
 .direnv/
 /.nullkomma/cloudflare/
-/.nullkomma/processes/
+/.nullkomma/gcroots/
+.playwright-mcp/
+/.mcp.json
 /.nvim.lua
 /.vscode/extensions.json
+/.vscode/mcp.json
 /.vscode/settings.json
-/_brand
-/_extensions/nkdocs
-/_extensions/nullkomma-brand
 /_nullkomma-brand.yml
 /privacy.qmd
-
-**/*.quarto_ipynb
-
-/.quarto/
+# nullkomma:git:end
