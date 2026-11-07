@@ -4,7 +4,10 @@
   inputs = {
     nullkomma.url = "https://flakehub.com/f/dataheld/nullkomma/0.1.*";
     nixpkgs.follows = "nullkomma/nixpkgs";
-    maxheld.url = "https://flakehub.com/f/dataheld/maxheld/*";
+    maxheld = {
+      url = "https://flakehub.com/f/dataheld/maxheld/*";
+      inputs.nullkomma.follows = "nullkomma";
+    };
   };
 
   outputs =
