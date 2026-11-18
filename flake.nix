@@ -30,8 +30,6 @@
           }
         ];
       };
-      # Keep CI and its dependent production deployment in one workflow.
-      nullkomma.github.enable = false;
       # typos only supports English, not the site's German prose and node names.
       perSystem.treefmt.settings.formatter.typos.excludes = [
         "README.md"
