@@ -1,10 +1,9 @@
-**/*.quarto_ipynb
-
-/.quarto/
-
 # nullkomma:git:start
+/.quarto/
+**/*.quarto_ipynb
 .quarto/
 _site/
+site_libs/
 .luarc.json
 result
 result-*
