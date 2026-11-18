@@ -10,4 +10,5 @@ website:
   title: steuerFlow
   site-url: https://steuerflow.maxheld.de
   repo-url: https://github.com/dataheld/steuerFlow
+  repo-actions: [edit, source, issue]
   sidebar: false

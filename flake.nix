@@ -6,7 +6,7 @@
     nixpkgs.follows = "nullkomma/nixpkgs";
     maxheld = {
       url = "https://flakehub.com/f/dataheld/maxheld/*";
-      inputs.nullkomma.follows = "nullkomma";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -16,7 +16,7 @@
       nullkomma.brand = inputs.maxheld;
       nullkomma.quarto.enable = true;
       nullkomma.quarto.brand.enable = true;
-      nullkomma.cloudflare = {
+      nullkomma.cloudflareSite = {
         enable = true;
         domain = "maxheld.de";
         name = "steuerflow";
